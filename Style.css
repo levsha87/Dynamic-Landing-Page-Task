@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +17,10 @@ body {
 
 #time {
   font-size: 8rem;
+}
+
+#dayToday {
+  font-size: 6rem;
 }
 
 h1 {
