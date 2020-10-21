@@ -2,8 +2,9 @@
 const time = document.getElementById("time"),
   greet = document.getElementById("greeting"),
   name = document.getElementById("name"),
-  focus = document.getElementById("focus");
-
+  focus = document.getElementById("focus"),
+  buttonReset = document.getElementById('reset');
+  
 const showAmPM = true;
 
 function showTime() {
@@ -22,12 +23,14 @@ function showTime() {
   }
 
   //out time
-  time.innerHTML = `${hour}<span>:</span>${plusZero(min)}<span>:</span>${plusZero(sec)} ${showAmPM ? amPm : ""}`;
+  time.innerHTML = `${hour}<span>:</span>${plusZero(
+    min
+  )}<span>:</span>${plusZero(sec)} ${showAmPM ? amPm : ""}`;
   setTimeout(showTime, 1000);
 }
 
-function plusZero(n){
-    return (parseInt(n, 10)<10 ? "0" : "") + n;
+function plusZero(n) {
+  return (parseInt(n, 10) < 10 ? "0" : "") + n;
 }
 // out NameDay
 
@@ -96,7 +99,10 @@ function setBgGreet() {
 
 //Get Name
 function getName() {
-  if (localStorage.getItem("name" === null)) {
+  if (
+    localStorage.getItem("name") === "" ||
+    localStorage.getItem("name") === null
+  ) {
     name.textContent = "[Enter Name]";
   } else {
     name.textContent = localStorage.getItem("name");
@@ -104,42 +110,59 @@ function getName() {
 }
 
 //set Name
-function setName(e) {
-  if (e.type === "keypress") {
-    if (e.which == 13 || e.keyCode == 13) {
+function setName() {
+  name.addEventListener("keypress", function (e) {
+    if (e.key === 'Enter') {
       localStorage.setItem("name", e.target.innerText);
+      if (
+        localStorage.getItem("name") === "" || localStorage.getItem("name") === null) {
+        name.textContent = "[Enter Name]";
+      };
       name.blur();
+    } else {
+      localStorage.setItem("name", e.target.innerText);
     }
-  } else {
-    localStorage.setItem("name", e.target.innerText);
-  }
+  });
 } //Get focus
 
 function getFocus() {
-  if (localStorage.getItem("focus" === null)) {
-    focus.textContent = "[Enter Focus]";
+  if (
+    localStorage.getItem("focus") === "" ||
+    localStorage.getItem("focus") === null
+  ) {
+    focus.textContent = "[Enter Name]";
   } else {
     focus.textContent = localStorage.getItem("focus");
   }
 }
 
-function setFocus(e) {
-  if (e.type === "keypress") {
-    if (e.which == 13 || e.keyCode == 13) {
+function setFocus() {
+  focus.addEventListener("keypress", function (e) {
+    if (e.key === 'Enter') {
       localStorage.setItem("focus", e.target.innerText);
+      if (
+        localStorage.getItem("focus") === "" || localStorage.getItem("focus") === null) {
+        focus.textContent = "[Enter Focus]";
+      };
       focus.blur();
+    } else {
+      localStorage.setItem("focus", e.target.innerText);
     }
-  } else {
-    localStorage.setItem("focus", e.target.innerText);
-  }
+  });
 }
+
+ function reset(){
+   localStorage.clear();
+   name.textContent = "[Enter Name]";
+   focus.textContent = "[Enter Focus]";
+ }
+
 
 name.addEventListener("keypress", setName);
 name.addEventListener("blur", setName);
 focus.addEventListener("keypress", setFocus);
 focus.addEventListener("blur", setFocus);
-
-
+buttonReset.addEventListener('click', reset);
 showTime();
 showDay();
 setBgGreet();
