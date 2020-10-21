@@ -33,36 +33,36 @@ function plusZero(n){
 
 function showDay() {
   let today = new Date(),
-    dayToday = today.getDay();
+    day = today.getDay();
 
-  switch (dayToday) {
+  switch (day) {
     case 1:
-      dayToday = "Monday";
-      dayToday.innerHTML = `${dayToday}`;
+      day = "Monday";
+      dayToday.innerHTML = `${day}`;
       break;
     case 2:
-      dayToday = "Tuesday";
-      dayToday.innerHTML = `${dayToday}`;
+      day = "Tuesday";
+      dayToday.innerHTML = `${day}`;
       break;
     case 3:
-      dayToday = "Wednesday";
-      dayToday.innerHTML = `${dayToday}`;
+      day = "Wednesday";
+      dayToday.innerHTML = `${day}`;
       break;
     case 4:
-      dayToday = "Thursday";
-      dayToday.innerHTML = `${dayToday}`;
+      day = "Thursday";
+      dayToday.innerHTML = `${day}`;
       break;
     case 5:
-      dayToday = "Friday";
-      dayToday.innerHTML = `${dayToday}`;
+      day = "Friday";
+      dayToday.innerHTML = `${day}`;
       break;
     case 6:
-      dayToday = "Saturday";
-      dayToday.innerHTML = `${dayToday}`;
+      day = "Saturday";
+      dayToday.innerHTML = `${day}`;
       break;
     case 7:
-      dayToday = "Sunday";
-      dayToday.innerHTML = `${dayToday}`;
+      day = "Sunday";
+      dayToday.innerHTML = `${day}`;
       break;
   }
 }
