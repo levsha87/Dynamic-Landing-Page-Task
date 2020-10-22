@@ -63,7 +63,7 @@ function showDay() {
       day = 'Saturday';
       dayToday.innerHTML = `${day}`;
       break;
-    case 7:
+    case 0:
       day = 'Sunday';
       dayToday.innerHTML = `${day}`;
       break;
