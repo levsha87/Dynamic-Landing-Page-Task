@@ -3,7 +3,8 @@ const time = document.getElementById('time'),
   greet = document.getElementById('greeting'),
   name = document.getElementById('name'),
   focus = document.getElementById('focus'),
-  buttonReset = document.getElementById('reset');
+  buttonReset = document.getElementById('reset'),
+  dayToday = document.getElementById('dayToday');
   
 const showAmPM = true;
 
@@ -15,11 +16,11 @@ function showTime() {
 
   const amPm = hour < 12 ? 'AM' : 'PM';
 
-  //12h
+  // 12
   if (hour > 12) {
     hour = hour - 12;
-  } else if (hour === 0) {
-    hour = 12;
+  // } else if (hour === 0) {
+    // hour = 12;
   }
 
   //out time
@@ -47,10 +48,10 @@ function showDay() {
       day = 'Tuesday';
       dayToday.innerHTML = `${day}`;
       break;
-    case 3:
+    // case 3:
       day = 'Wednesday';
       dayToday.innerHTML = `${day}`;
-      break;
+      // break;
     case 4:
       day = 'Thursday';
       dayToday.innerHTML = `${day}`;
