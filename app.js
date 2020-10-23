@@ -48,10 +48,10 @@ function showDay() {
       day = 'Tuesday';
       dayToday.innerHTML = `${day}`;
       break;
-    // case 3:
+    case 3:
       day = 'Wednesday';
       dayToday.innerHTML = `${day}`;
-      // break;
+      break;
     case 4:
       day = 'Thursday';
       dayToday.innerHTML = `${day}`;
