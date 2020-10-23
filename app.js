@@ -79,13 +79,13 @@ function setBgGreet() {
   switch (true) {
     case hour < 12:
       document.body.style.backgroundImage = 'url(img/morning.jpg)';
-      greeting.textContent = 'Good Morning, ';
+      greet.textContent = 'Good Morning, ';
       document.body.style.backgroundRepeat = 'no-repeat';
       document.body.style.backgroundSize = 'cover';
       break;
     case hour < 18:
       document.body.style.backgroundImage = 'url(img/afternoon.jpg)';
-      greeting.textContent = 'Good Afternoon, ';
+      greet.textContent = 'Good Afternoon, ';
       document.body.style.backgroundRepeat = 'no-repeat';
       document.body.style.backgroundSize = 'cover';
       break;
@@ -93,7 +93,7 @@ function setBgGreet() {
       document.body.style.backgroundImage = 'url(img/night.jpg)';
       document.body.style.backgroundRepeat = 'no-repeat';
       document.body.style.backgroundSize = 'cover';
-      greeting.textContent = 'Good Evening, ';
+      greet.textContent = 'Good Evening, ';
       document.body.style.color = 'white';
   }
 }
