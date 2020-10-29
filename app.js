@@ -111,7 +111,7 @@ function getName() {
 }
 
 //set Name
-function setName() {
+function setNameListener() {
   name.addEventListener('keyup', function (e) {
     if (e.key !== 'Enter') {
       localStorage.setItem('name', e.target.innerText);
@@ -142,7 +142,7 @@ function getFocus() {
   }
 }
 
-function setFocus() {
+function setFocusListener() {
   focus.addEventListener('keyup', function (e) {
     if (e.key !== 'Enter') {
       localStorage.setItem('focus', e.target.innerText);
@@ -168,8 +168,8 @@ function reset() {
 }
 
 
-setName();
-setFocus(); 
+setNameListener();
+setFocusListener(); 
 buttonReset.addEventListener('click', reset);
 showTime();
 showDay();
