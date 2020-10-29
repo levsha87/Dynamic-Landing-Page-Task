@@ -136,7 +136,7 @@ function getFocus() {
     localStorage.getItem('focus') === '' ||
     localStorage.getItem('focus') === null
   ) {
-    focus.textContent = '[Enter Name]';
+    focus.textContent = '[Enter Focus]';
   } else {
     focus.textContent = localStorage.getItem('focus');
   }
